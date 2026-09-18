@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INZORA Rooftop Cafe</title>
+
+<style>
+
+    body {
+        margin: 0;
+        background-color: #f8f3ec;
+        color: #2f2a26;
+        font-family: Arial, sans-serif;
+    }
+
+    
+    nav {
+        background-color: #1f2a24;
+        padding: 20px 50px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav h2 {
+        color: #f4d58d;
+        margin: 0;
+        font-family: Georgia, serif;
+        letter-spacing: 2px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 25px;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        color: #f4d58d;
+    }
+
+    .hero {
+        min-height: 90vh;
+
+        background:
+            linear-gradient(
+                rgba(20, 30, 25, 0.55),
+                rgba(20, 30, 25, 0.55)
+            ),
+            url("inzora.jpg");
+
+        background-size: cover;
+        background-position: center;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+        color: white;
+    }
+
+    .hero-content {
+        max-width: 800px;
+        padding: 30px;
+    }
+
+    .hero h1 {
+        font-family: Georgia, serif;
+        font-size: 70px;
+        margin: 0 0 20px;
+    }
+
+    .hero p {
+        font-size: 22px;
+        line-height: 1.6;
+    }
+
+    .hero-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 15px 35px;
+
+        background-color: #f4d58d;
+        color: #1f2a24;
+
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 30px;
+    }
+
+    .hero-button:hover {
+        background-color: white;
+    }
+
+    .section {
+        width: 85%;
+        max-width: 1100px;
+        margin: 80px auto;
+        text-align: center;
+    }
+
+    .section h2 {
+        font-family: Georgia, serif;
+        font-size: 42px;
+        color: #1f2a24;
+        margin-bottom: 20px;
+    }
+
+    .section-intro {
+        max-width: 700px;
+        margin: auto;
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    
+    .about-container {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        margin-top: 40px;
+
+        text-align: left;
+    }
+
+    .about-image {
+        width: 50%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    .about-text {
+        width: 50%;
+    }
+
+    .about-text h3 {
+        font-family: Georgia, serif;
+        font-size: 30px;
+        color: #6d4c35;
+    }
+
+    .about-text p {
+        line-height: 1.8;
+        font-size: 17px;
+    }
+
+    
+
+    .menu {
+        display: flex;
+        justify-content: center;
+
+        gap: 25px;
+        flex-wrap: wrap;
+
+        margin-top: 40px;
+    }
+
+    .menu-card {
+        width: 300px;
+
+        background-color: white;
+
+        padding: 25px;
+
+        border-radius: 20px;
+
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+        text-align: left;
+    }
+
+    .menu-card h3 {
+        font-family: Georgia, serif;
+        color: #6d4c35;
+        font-size: 25px;
+    }
+
+    .menu-card p {
+        line-height: 1.6;
+    }
+
+    .price {
+        font-weight: bold;
+        color: #1f2a24;
+        font-size: 18px;
+    }
+
+
+    .experience {
+        background-color: #1f2a24;
+        color: white;
+
+        padding: 80px 20px;
+
+        text-align: center;
+    }
+
+    .experience h2 {
+        font-family: Georgia, serif;
+        font-size: 42px;
+        color: #f4d58d;
+    }
+
+    .experience p {
+        max-width: 700px;
+        margin: auto;
+
+        line-height: 1.8;
+        font-size: 18px;
+    }
+
+    .gallery {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 15px;
+
+        margin-top: 40px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: 250px;
+
+        object-fit: cover;
+
+        border-radius: 15px;
+
+        transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.03);
+    }
+
+    
+
+    .location {
+        background-color: #eadfcf;
+
+        padding: 60px 20px;
+
+        text-align: center;
+    }
+
+    .location h2 {
+        font-family: Georgia, serif;
+        font-size: 40px;
+    }
+
+    .location p {
+        font-size: 18px;
+        line-height: 1.8;
+    }
+
+    .contact-button {
+        display: inline-block;
+
+        margin-top: 20px;
+
+        padding: 14px 30px;
+
+        background-color: #1f2a24;
+        color: white;
+
+        text-decoration: none;
+
+        border-radius: 30px;
+    }
+
+    .contact-button:hover {
+        background-color: #6d4c35;
+    }
+
+
+
+    footer {
+        background-color: #151c18;
+
+        color: white;
+
+        text-align: center;
+
+        padding: 40px 20px;
+    }
+
+    footer h2 {
+        color: #f4d58d;
+        font-family: Georgia, serif;
+    }
+
+    footer p {
+        margin: 8px;
+    }
+
+    
+
+    @media (max-width: 768px) {
+
+        nav {
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        nav a {
+            margin: 0 8px;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        .about-container {
+            flex-direction: column;
+        }
+
+        .about-image,
+        .about-text {
+            width: 100%;
+        }
+
+        .gallery {
+            grid-template-columns: 1fr;
+        }
+
+        .section h2 {
+            font-size: 34px;
+        }
+    }
+
+</style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <h2>INZORA</h2>
+
+        <div>
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#outlook">Outlook</a>
+
+            <a href="#menu">Menu</a>
+
+            <a href="#contact">Contact Us</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>INZORA</h1>
+
+            <p>
+                A rooftop café experience in the heart of Kigali.
+                Come for the coffee, stay for the view.
+            </p>
+
+            <a href="#menu" class="hero-button">
+                Explore Our Menu
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="section" id="about">
+
+        <h2>Welcome To INZORA</h2>
+
+        <p class="section-intro">
+            A place to slow down, connect, enjoy good food
+            and experience Kigali from above.
+        </p>
+
+
+        <div class="about-container">
+
+            <img
+                class="about-image"
+                src="INZORAC.png"
+                alt="INZORA Cafe"
+            >
+
+            <div class="about-text">
+
+                <h3>More Than Coffee</h3>
+
+                <p>
+                    INZORA is a café designed around good food,
+                    thoughtful drinks and a relaxed atmosphere.
+                </p>
+
+                <p>
+                    Whether you're meeting friends, studying,
+                    working or simply enjoying the view,
+                    INZORA offers a space to pause and enjoy
+                    the moment.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    
+    <section class="section" id="menu">
+
+        <h2>Our Menu</h2>
+
+        <p class="section-intro">
+            Simple, fresh and made for moments worth enjoying.
+        </p>
+
+
+        <div class="menu">
+
+            <div class="menu-card">
+
+                <h3>☕ Coffee</h3>
+
+                <p>
+                    Enjoy carefully prepared coffee
+                    in a relaxed rooftop atmosphere.
+                </p>
+
+            </div>
+
+
+            <div class="menu-card">
+
+                <h3>🥐 Pastries</h3>
+
+                <p>
+                    A selection of pastries and baked
+                    treats to enjoy with your drink.
+                </p>
+
+            </div>
+
+
+            <div class="menu-card">
+
+                <h3>🥗 Fresh Food</h3>
+
+                <p>
+                    Fresh meals and dishes prepared
+                    with quality ingredients.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    
+
+    <section class="experience">
+
+        <h2>INZORA Experience</h2>
+
+        <p>
+            Take a break from the busy city.
+            Enjoy a drink, have a conversation,
+            get some work done or simply take in
+            the Kigali skyline.
+        </p>
+
+    </section>
+
+
+    
+    <section class="section" id="outlook">
+
+        <h2>Our Space</h2>
+
+        <p class="section-intro">
+            A calm space with great views and a relaxed atmosphere.
+        </p>
+
+
+        <div class="gallery">
+
+            <img src="CAFE INTERIOR.png" alt="INZORA Cafe">
+
+            <img src="CAFE INT.png" alt="INZORA Cafe Interior">
+
+            <img src="rooftop 2.png" alt="INZORA Rooftop">
+
+            <img src="food.png"INZORA Food">
+
+            <img src="CAPPUCINO GOOD.png" alt="INZORA Coffee">
+
+            <img src="kigali view.png" alt="Kigali View">
+
+        </div>
+
+    </section>
+
+
+    
+
+    <section class="location" id="contact">
+
+        <h2>Visit INZORA</h2>
+
+        <p>KG5 Avenue</p>
+
+        <p>📍 Kigali, Rwanda</p>
+
+        <p>
+            Enjoy a coffee. Meet someone.
+            Take in the view.
+        </p>
+
+        <a
+            href="https://www.inzoracafe.com/contact-us.html"
+            class="contact-button"
+        >
+            Contact INZORA
+        </a>
+
+    </section>
+
+
+    
+
+    <footer>
+
+        <h2>INZORA</h2>
+
+        <p>
+            Rooftop Café • Kigali, Rwanda
+        </p>
+
+        <p>
+            This is a student-made website concept.
+        </p>
+
+        <p>
+            &copy; 2026
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
